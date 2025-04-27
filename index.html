@@ -6,9 +6,9 @@
     <title>Marathon Material Tracker</title>
     <style>
         body { font-family: Arial, sans-serif; margin: 20px; background: #111; color: #eee; }
-        input[type="text"] { width: 100%; padding: 10px; font-size: 16px; margin-bottom: 20px; }
-        .material { margin: 10px 0; padding: 10px; background: #222; border-radius: 5px; }
-        .material label { cursor: pointer; }
+        select, input[type="text"] { width: 100%; padding: 10px; font-size: 16px; margin-bottom: 20px; }
+        .material, .upgrade { margin: 10px 0; padding: 10px; background: #222; border-radius: 5px; }
+        .material label, .upgrade label { cursor: pointer; display: block; }
         #trackingList { margin-top: 30px; }
         button { margin-top: 10px; padding: 5px 10px; font-size: 14px; }
     </style>
@@ -16,7 +16,11 @@
 <body>
 
 <h1>Marathon Material Tracker</h1>
-<input type="text" id="searchInput" placeholder="Search for a material...">
+<select id="modeSelect">
+    <option value="materials">Material Search</option>
+    <option value="upgrades">Upgrade Tracker</option>
+</select>
+<input type="text" id="searchInput" placeholder="Search...">
 <div id="materialsList"></div>
 
 <h2>📋 Currently Tracking:</h2>
@@ -25,18 +29,36 @@
 
 <script>
 let materials = [];
+let upgrades = [];
 const searchInput = document.getElementById('searchInput');
 const materialsList = document.getElementById('materialsList');
 const trackingList = document.getElementById('trackingList');
+const modeSelect = document.getElementById('modeSelect');
 let trackingItems = JSON.parse(localStorage.getItem('trackingItems')) || [];
 
 fetch('materials.json')
     .then(response => response.json())
     .then(data => {
         materials = data;
-        renderMaterials();
-        renderTracking();
+        fetch('upgrades.json')
+            .then(response => response.json())
+            .then(data => {
+                upgrades = data;
+                renderView();
+                renderTracking();
+            });
     });
+
+modeSelect.addEventListener('change', renderView);
+searchInput.addEventListener('input', renderView);
+
+function renderView() {
+    if (modeSelect.value === 'materials') {
+        renderMaterials();
+    } else {
+        renderUpgrades();
+    }
+}
 
 function renderMaterials() {
     const query = searchInput.value.toLowerCase();
@@ -52,8 +74,27 @@ function renderMaterials() {
                     <input type="checkbox" onchange="toggleTracking('${m.Material}')" ${checked}>
                     <strong>${m.Material}</strong> <br>
                     Map: ${m.Map} | POI 1: ${m["POI 1"]} | POI 2: ${m["POI 2"]}<br>
-                    Sources: ${[m["Source 1"], m["Source 2"], m["Source 3"]].filter(s => s).join(", ")}<br>
-                    Notes: ${m.Notes || 'None'}
+                    Sources: ${[m["Source 1"], m["Source 2"], m["Source 3"]].filter(s => s).join(", ")}
+                </label>
+            `;
+            materialsList.appendChild(div);
+        });
+}
+
+function renderUpgrades() {
+    const query = searchInput.value.toLowerCase();
+    materialsList.innerHTML = '';
+    upgrades
+        .filter(u => u.Upgrade.toLowerCase().includes(query))
+        .forEach((u) => {
+            const div = document.createElement('div');
+            div.className = 'upgrade';
+            div.innerHTML = `
+                <label>
+                    <button onclick="addUpgradeToTracking('${u.Upgrade}')">Add</button>
+                    <strong>${u.Upgrade}</strong> <br>
+                    Material 1: ${u["Material 1"]} (${u["#Amount1"]})<br>
+                    Material 2: ${u["Material 2"] || 'None'} (${u["#Amount2"] || ''})
                 </label>
             `;
             materialsList.appendChild(div);
@@ -71,6 +112,18 @@ function toggleTracking(material) {
     renderMaterials();
 }
 
+function addUpgradeToTracking(upgradeName) {
+    const upgrade = upgrades.find(u => u.Upgrade === upgradeName);
+    if (upgrade) {
+        trackingItems.push(`Upgrade: ${upgrade.Upgrade}`);
+        if (upgrade["Material 1"]) trackingItems.push(upgrade["Material 1"]);
+        if (upgrade["Material 2"]) trackingItems.push(upgrade["Material 2"]);
+        trackingItems = [...new Set(trackingItems)]; // Remove duplicates
+        localStorage.setItem('trackingItems', JSON.stringify(trackingItems));
+        renderTracking();
+    }
+}
+
 function renderTracking() {
     trackingList.innerHTML = '';
     trackingItems.forEach(m => {
@@ -84,10 +137,8 @@ function clearTracking() {
     trackingItems = [];
     localStorage.removeItem('trackingItems');
     renderTracking();
-    renderMaterials();
+    renderView();
 }
-
-searchInput.addEventListener('input', renderMaterials);
 </script>
 
 </body>
