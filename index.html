@@ -68,7 +68,8 @@ function renderMaterials() {
         .forEach((m) => {
             const div = document.createElement('div');
             div.className = 'material';
-            const checked = trackingItems.includes(m.Material) ? 'checked' : '';
+            const isTracked = trackingItems.some(t => t.name === m.Material);
+            const checked = isTracked ? 'checked' : '';
             div.innerHTML = `
                 <label>
                     <input type="checkbox" onchange="toggleTracking('${m.Material}')" ${checked}>
@@ -102,7 +103,8 @@ function renderUpgrades() {
 }
 
 function toggleTracking(material) {
-    if (trackingItems.find(t => t.name === material)) {
+    const exists = trackingItems.some(t => t.name === material);
+    if (exists) {
         trackingItems = trackingItems.filter(t => t.name !== material);
     } else {
         const matData = materials.find(m => m.Material === material);
@@ -123,8 +125,26 @@ function addUpgradeToTracking(upgradeName) {
     const upgrade = upgrades.find(u => u.Upgrade === upgradeName);
     if (upgrade) {
         trackingItems.push({ name: `Upgrade: ${upgrade.Upgrade}`, isUpgrade: true });
-        if (upgrade["Material 1"]) toggleTracking(upgrade["Material 1"]);
-        if (upgrade["Material 2"]) toggleTracking(upgrade["Material 2"]);
+        if (upgrade["Material 1"]) {
+            const mat1 = materials.find(m => m.Material === upgrade["Material 1"]);
+            if (mat1) {
+                trackingItems.push({
+                    name: mat1.Material,
+                    map: mat1.Map,
+                    sources: [mat1["Source 1"], mat1["Source 2"], mat1["Source 3"]].filter(s => s)
+                });
+            }
+        }
+        if (upgrade["Material 2"]) {
+            const mat2 = materials.find(m => m.Material === upgrade["Material 2"]);
+            if (mat2) {
+                trackingItems.push({
+                    name: mat2.Material,
+                    map: mat2.Map,
+                    sources: [mat2["Source 1"], mat2["Source 2"], mat2["Source 3"]].filter(s => s)
+                });
+            }
+        }
         trackingItems = trackingItems.filter((item, index, self) =>
             index === self.findIndex(t => t.name === item.name)
         );
