@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marathon Material Tracker</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background: #111; color: #eee; }
+        input[type="text"] { width: 100%; padding: 10px; font-size: 16px; margin-bottom: 20px; }
+        .material { margin: 10px 0; padding: 10px; background: #222; border-radius: 5px; }
+        .material label { cursor: pointer; }
+        #trackingList { margin-top: 30px; }
+        button { margin-top: 10px; padding: 5px 10px; font-size: 14px; }
+    </style>
+</head>
+<body>
+
+<h1>Marathon Material Tracker</h1>
+<input type="text" id="searchInput" placeholder="Search for a material...">
+<div id="materialsList"></div>
+
+<h2>📋 Currently Tracking:</h2>
+<ul id="trackingList"></ul>
+<button onclick="clearTracking()">Clear All</button>
+
+<script>
+const materials = [
+    { Material: "Aluminum Rods", Map: "Perimeter", POI1: "Station", POI2: "Hauler", Source1: "Arms Locker", Source2: "", Source3: "", Status: "", Notes: "" },
+    { Material: "Basic Xerogel", Map: "Dire Marsh", POI1: "Quarantine", POI2: "Greenhouse", Source1: "Tool Cart", Source2: "", Source3: "", Status: "", Notes: "" },
+    // ... you can extend this list with full data extracted from your spreadsheet
+];
+
+const searchInput = document.getElementById('searchInput');
+const materialsList = document.getElementById('materialsList');
+const trackingList = document.getElementById('trackingList');
+let trackingItems = [];
+
+function renderMaterials() {
+    const query = searchInput.value.toLowerCase();
+    materialsList.innerHTML = '';
+    materials
+        .filter(m => m.Material.toLowerCase().includes(query))
+        .forEach((m, index) => {
+            const div = document.createElement('div');
+            div.className = 'material';
+            div.innerHTML = `
+                <label>
+                    <input type="checkbox" onchange="toggleTracking('${m.Material}')">
+                    <strong>${m.Material}</strong> <br>
+                    Map: ${m.Map} | POI 1: ${m.POI1} | POI 2: ${m.POI2}<br>
+                    Sources: ${[m.Source1, m.Source2, m.Source3].filter(s => s).join(", ")}<br>
+                    Notes: ${m.Notes || 'None'}
+                </label>
+            `;
+            materialsList.appendChild(div);
+        });
+}
+
+function toggleTracking(material) {
+    if (trackingItems.includes(material)) {
+        trackingItems = trackingItems.filter(m => m !== material);
+    } else {
+        trackingItems.push(material);
+    }
+    renderTracking();
+}
+
+function renderTracking() {
+    trackingList.innerHTML = '';
+    trackingItems.forEach(m => {
+        const li = document.createElement('li');
+        li.textContent = m;
+        trackingList.appendChild(li);
+    });
+}
+
+function clearTracking() {
+    trackingItems = [];
+    renderTracking();
+    document.querySelectorAll('#materialsList input[type=checkbox]').forEach(cb => cb.checked = false);
+}
+
+searchInput.addEventListener('input', renderMaterials);
+
+renderMaterials();
+</script>
+
+</body>
+</html>
