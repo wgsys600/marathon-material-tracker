@@ -1,16 +1,612 @@
 [
     {
         "Upgrade": "CyberAcme Expansion",
+        "Faction": "CyberAcme",
+        "Lvl": 1,
+        "Credits": 2000,
         "Material 1": "Micro Processor",
         "#Amount1": 20,
         "Material 2": "",
         "#Amount2": ""
     },
     {
+        "Upgrade": "CyberAcme Expansion+",
+        "Faction": "CyberAcme",
+        "Lvl": 2,
+        "Credits": 4000,
+        "Material 1": "Synthetic Rubber",
+        "#Amount1": 8,
+        "Material 2": "Aluminum Rods",
+        "#Amount2": 12.0
+    },
+    {
+        "Upgrade": "CyberAcme Expansion++",
+        "Faction": "CyberAcme",
+        "Lvl": 3,
+        "Credits": 6000,
+        "Material 1": "Flex Processor",
+        "#Amount1": 8,
+        "Material 2": "Lab Xerogel",
+        "#Amount2": 6.0
+    },
+    {
         "Upgrade": "Cores",
+        "Faction": "CyberAcme",
+        "Lvl": 1,
+        "Credits": 1250,
         "Material 1": "Micro Processor",
         "#Amount1": 8,
         "Material 2": "Spark Leaf",
-        "#Amount2": 4
+        "#Amount2": 4.0
+    },
+    {
+        "Upgrade": "CyberAcme Scavenger.exe",
+        "Faction": "CyberAcme",
+        "Lvl": 1,
+        "Credits": 1250,
+        "Material 1": "Spark Leaf",
+        "#Amount1": 6,
+        "Material 2": "",
+        "#Amount2": ""
+    },
+    {
+        "Upgrade": "CyberAcme Loot_Siphon.exe",
+        "Faction": "CyberAcme",
+        "Lvl": 2,
+        "Credits": 1750,
+        "Material 1": "Expanded Processor",
+        "#Amount1": 8,
+        "Material 2": "Steel Rods",
+        "#Amount2": 4.0
+    },
+    {
+        "Upgrade": "CyberAcme Prime_Amp.exe",
+        "Faction": "CyberAcme",
+        "Lvl": 3,
+        "Credits": 2500,
+        "Material 1": "Flex Processor",
+        "#Amount1": 4,
+        "Material 2": "Combat Xerogel",
+        "#Amount2": 2.0
+    },
+    {
+        "Upgrade": "Sponsorship+",
+        "Faction": "CyberAcme",
+        "Lvl": 2,
+        "Credits": 1750,
+        "Material 1": "Expanded Processor",
+        "#Amount1": 4,
+        "Material 2": "Steel Rods",
+        "#Amount2": 2.0
+    },
+    {
+        "Upgrade": "Explosives",
+        "Faction": "CyberAcme",
+        "Lvl": 1,
+        "Credits": 1250,
+        "Material 1": "Spark Leaf",
+        "#Amount1": 2,
+        "Material 2": "",
+        "#Amount2": ""
+    },
+    {
+        "Upgrade": "Explosives+",
+        "Faction": "CyberAcme",
+        "Lvl": 2,
+        "Credits": 1750,
+        "Material 1": "Synthetic Rubber",
+        "#Amount1": 4,
+        "Material 2": "Steel Rods",
+        "#Amount2": 2.0
+    },
+    {
+        "Upgrade": "Gadgeteer",
+        "Faction": "CyberAcme",
+        "Lvl": 1,
+        "Credits": 1250,
+        "Material 1": "Hydrocarbon Rubber",
+        "#Amount1": 12,
+        "Material 2": "Spark Leaf",
+        "#Amount2": 4.0
+    },
+    {
+        "Upgrade": "CyberAcme Heat_Sink.exe",
+        "Faction": "CyberAcme",
+        "Lvl": 2,
+        "Credits": 1750,
+        "Material 1": "Synthetic Rubber",
+        "#Amount1": 8,
+        "Material 2": "Steel Rods",
+        "#Amount2": 4.0
+    },
+    {
+        "Upgrade": "CyberAcme Emergency_Vent.exe",
+        "Faction": "CyberAcme",
+        "Lvl": 2,
+        "Credits": 1750,
+        "Material 1": "Expanded Processor",
+        "#Amount1": 4,
+        "Material 2": "Steel Rods",
+        "#Amount2": 2.0
+    },
+    {
+        "Upgrade": "CyberAcme Reinforce.exe",
+        "Faction": "CyberAcme",
+        "Lvl": 3,
+        "Credits": 2500,
+        "Material 1": "Symbiote Rubber",
+        "#Amount1": 4,
+        "Material 2": "Combat Xerogel",
+        "#Amount2": 2.0
+    },
+    {
+        "Upgrade": "CyberAcme Lifeline.exe",
+        "Faction": "CyberAcme",
+        "Lvl": 1,
+        "Credits": 1250,
+        "Material 1": "Micro Processor",
+        "#Amount1": 4,
+        "Material 2": "Spark Leaf",
+        "#Amount2": 6.0
+    },
+    {
+        "Upgrade": "CyberAcme Recovery.exe",
+        "Faction": "CyberAcme",
+        "Lvl": 1,
+        "Credits": 1250,
+        "Material 1": "Hydrocarbon Rubber",
+        "#Amount1": 4,
+        "Material 2": "Spark Leaf",
+        "#Amount2": 2.0
+    },
+    {
+        "Upgrade": "CyberAcme Agility_Matrix.exe",
+        "Faction": "CyberAcme",
+        "Lvl": 3,
+        "Credits": 2500,
+        "Material 1": "Symbiote Rubber",
+        "#Amount1": 4,
+        "Material 2": "Combat Xerogel",
+        "#Amount2": 2.0
+    },
+    {
+        "Upgrade": "Gift Horse",
+        "Faction": "CyberAcme",
+        "Lvl": 3,
+        "Credits": 6000,
+        "Material 1": "Symbiote Rubber",
+        "#Amount1": 8,
+        "Material 2": "Shell ID",
+        "#Amount2": 3.0
+    },
+    {
+        "Upgrade": "CyberAcme Optimization",
+        "Faction": "CyberAcme",
+        "Lvl": 3,
+        "Credits": 6000,
+        "Material 1": "Shell ID",
+        "#Amount1": 9,
+        "Material 2": "Anomalous Plasma",
+        "#Amount2": 1.0
+    },
+    {
+        "Upgrade": "NuCaloric Lifeline.exe",
+        "Faction": "Nu Caloric",
+        "Lvl": 1,
+        "Credits": 1250,
+        "Material 1": "Storage Drive",
+        "#Amount1": 4,
+        "Material 2": "Organic Lens",
+        "#Amount2": 2.0
+    },
+    {
+        "Upgrade": "Headspace",
+        "Faction": "Nu Caloric",
+        "Lvl": 2,
+        "Credits": 1750,
+        "Material 1": "Encrypted Drive",
+        "#Amount1": 8,
+        "Material 2": "Chitin Sample",
+        "#Amount2": 3.0
+    },
+    {
+        "Upgrade": "Headspace+",
+        "Faction": "Nu Caloric",
+        "Lvl": 3,
+        "Credits": 1750,
+        "Material 1": "Encrypted Drive",
+        "#Amount1": 8,
+        "Material 2": "Chitin Sample",
+        "#Amount2": 3.0
+    },
+    {
+        "Upgrade": "Headspace_Discount",
+        "Faction": "Nu Caloric",
+        "Lvl": 3,
+        "Credits": 2500,
+        "Material 1": "Coherence Drive",
+        "#Amount1": 8,
+        "Material 2": "Expanded Processor",
+        "#Amount2": 6.0
+    },
+    {
+        "Upgrade": "NuCaloric Agility Matrix.exe",
+        "Faction": "Nu Caloric",
+        "Lvl": 2,
+        "Credits": 1750,
+        "Material 1": "Conductive Filament",
+        "#Amount1": 4,
+        "Material 2": "Organic Lens",
+        "#Amount2": 6.0
+    },
+    {
+        "Upgrade": "NuCaloric Agility Matrix.exe (2)",
+        "Faction": "Nu Caloric",
+        "Lvl": 3,
+        "Credits": 2500,
+        "Material 1": "Coherence Drive",
+        "#Amount1": 4,
+        "Material 2": "Flex Processor",
+        "#Amount2": 2.0
+    },
+    {
+        "Upgrade": "Medic",
+        "Faction": "Nu Caloric",
+        "Lvl": 1,
+        "Credits": 1250,
+        "Material 1": "Storage Drive",
+        "#Amount1": 12,
+        "Material 2": "Organic Lens",
+        "#Amount2": 6.0
+    },
+    {
+        "Upgrade": "Medic_Stock",
+        "Faction": "Nu Caloric",
+        "Lvl": 2,
+        "Credits": 1750,
+        "Material 1": "Encrypted Drive",
+        "#Amount1": 4,
+        "Material 2": "Tarax Seed",
+        "#Amount2": 2.0
+    },
+    {
+        "Upgrade": "Medic_Discount",
+        "Faction": "Nu Caloric",
+        "Lvl": 3,
+        "Credits": 2500,
+        "Material 1": "Coherence Drive",
+        "#Amount1": 8,
+        "Material 2": "Expanded Processor",
+        "#Amount2": 6.0
+    },
+    {
+        "Upgrade": "NuCaloric Recovery.exe",
+        "Faction": "Nu Caloric",
+        "Lvl": 2,
+        "Credits": 1750,
+        "Material 1": "Conductive Filament",
+        "#Amount1": 8,
+        "Material 2": "Tarax Seed",
+        "#Amount2": 4.0
+    },
+    {
+        "Upgrade": "NuCaloric Expansion",
+        "Faction": "Nu Caloric",
+        "Lvl": 3,
+        "Credits": 4000,
+        "Material 1": "Shell ID",
+        "#Amount1": 9,
+        "Material 2": "Anomalous Plasma",
+        "#Amount2": 1.0
+    },
+    {
+        "Upgrade": "Volt Precision Rifle",
+        "Faction": "Nu Caloric",
+        "Lvl": 3,
+        "Credits": 2500,
+        "Material 1": "Biofilament",
+        "#Amount1": 8,
+        "Material 2": "Expanded Processor",
+        "#Amount2": 6.0
+    },
+    {
+        "Upgrade": "NuCaloric Reinforce.exe",
+        "Faction": "Nu Caloric",
+        "Lvl": 2,
+        "Credits": 1750,
+        "Material 1": "Conductive Filament",
+        "#Amount1": 4,
+        "Material 2": "Tarax Seed",
+        "#Amount2": 2.0
+    },
+    {
+        "Upgrade": "NuCaloric Reinforce.exe (2)",
+        "Faction": "Nu Caloric",
+        "Lvl": 3,
+        "Credits": 2500,
+        "Material 1": "Biofilament",
+        "#Amount1": 4,
+        "Material 2": "Flex Processor",
+        "#Amount2": 2.0
+    },
+    {
+        "Upgrade": "Carrier",
+        "Faction": "Nu Caloric",
+        "Lvl": 1,
+        "Credits": 1250,
+        "Material 1": "Plastic Filament",
+        "#Amount1": 4,
+        "Material 2": "Organic Lens",
+        "#Amount2": 2.0
+    },
+    {
+        "Upgrade": "Carrier Stock",
+        "Faction": "Nu Caloric",
+        "Lvl": 2,
+        "Credits": 1750,
+        "Material 1": "Encrypted Drive",
+        "#Amount1": 8,
+        "Material 2": "Tarax Seed",
+        "#Amount2": 4.0
+    },
+    {
+        "Upgrade": "Carrier Discount",
+        "Faction": "Nu Caloric",
+        "Lvl": 3,
+        "Credits": 2500,
+        "Material 1": "Biofilament",
+        "#Amount1": 4,
+        "Material 2": "Flex Processor",
+        "#Amount2": 2.0
+    },
+    {
+        "Upgrade": "Carrier+",
+        "Faction": "Nu Caloric",
+        "Lvl": 3,
+        "Credits": 2500,
+        "Material 1": "Coherence Drive",
+        "#Amount1": 8,
+        "Material 2": "Fungal Growth",
+        "#Amount2": 3.0
+    },
+    {
+        "Upgrade": "NuCaloric Null_Hazard",
+        "Faction": "Nu Caloric",
+        "Lvl": 1,
+        "Credits": 1250,
+        "Material 1": "Plastic Filament",
+        "#Amount1": 12,
+        "Material 2": "Nanocomposites",
+        "#Amount2": 9.0
+    },
+    {
+        "Upgrade": "NuCaloric Optimization",
+        "Faction": "Nu Caloric",
+        "Lvl": 3,
+        "Credits": 5000,
+        "Material 1": "Synchronizer",
+        "#Amount1": 9,
+        "Material 2": "Nanotruss",
+        "#Amount2": 12.0
+    },
+    {
+        "Upgrade": "Traxus Tracker.exe",
+        "Faction": "Traxus",
+        "Lvl": 1,
+        "Credits": 2000,
+        "Material 1": "Carbon Wire",
+        "#Amount1": 12,
+        "Material 2": "Basic Xerogel",
+        "#Amount2": 6.0
+    },
+    {
+        "Upgrade": "Tactical_Amp.exe",
+        "Faction": "Traxus",
+        "Lvl": 2,
+        "Credits": 1750,
+        "Material 1": "Gel Explosive",
+        "#Amount1": 4,
+        "Material 2": "Dynamic Lens",
+        "#Amount2": 2.0
+    },
+    {
+        "Upgrade": "Tactical_Amp.exe (2)",
+        "Faction": "Traxus",
+        "Lvl": 3,
+        "Credits": 2500,
+        "Material 1": "Molecular Wire",
+        "#Amount1": 8,
+        "Material 2": "Tarax Seed",
+        "#Amount2": 6.0
+    },
+    {
+        "Upgrade": "Traxus Unfazed.exe",
+        "Faction": "Traxus",
+        "Lvl": 2,
+        "Credits": 1750,
+        "Material 1": "Polymire Wire",
+        "#Amount1": 4,
+        "Material 2": "Basic Xerogel",
+        "#Amount2": 6.0
+    },
+    {
+        "Upgrade": "Traxus Unfazed.exe (2)",
+        "Faction": "Traxus",
+        "Lvl": 3,
+        "Credits": 2500,
+        "Material 1": "Molecular Wire",
+        "#Amount1": 4,
+        "Material 2": "Papaver Bloom",
+        "#Amount2": 2.0
+    },
+    {
+        "Upgrade": "Traxus Cutthroat.exe",
+        "Faction": "Traxus",
+        "Lvl": 1,
+        "Credits": 1250,
+        "Material 1": "Putty Explosive",
+        "#Amount1": 4,
+        "Material 2": "Basic Xerogel",
+        "#Amount2": 2.0
+    },
+    {
+        "Upgrade": "Traxus Cutthroat.exe (2)",
+        "Faction": "Traxus",
+        "Lvl": 2,
+        "Credits": 1750,
+        "Material 1": "Gel Explosive",
+        "#Amount1": 8,
+        "Material 2": "Dynamic Lens",
+        "#Amount2": 4.0
+    },
+    {
+        "Upgrade": "Standtall",
+        "Faction": "Traxus",
+        "Lvl": 2,
+        "Credits": 1750,
+        "Material 1": "Polymire Wire",
+        "#Amount1": 12,
+        "Material 2": "Dynamic Lens",
+        "#Amount2": 4.0
+    },
+    {
+        "Upgrade": "Standtall+",
+        "Faction": "Traxus",
+        "Lvl": 3,
+        "Credits": 2500,
+        "Material 1": "Liquid Explosive",
+        "#Amount1": 4,
+        "Material 2": "Papaver Bloom",
+        "#Amount2": 2.0
+    },
+    {
+        "Upgrade": "Shielded_Discount",
+        "Faction": "Traxus",
+        "Lvl": 3,
+        "Credits": 2500,
+        "Material 1": "Molecular Wire",
+        "#Amount1": 8,
+        "Material 2": "Tarax Seed",
+        "#Amount2": 6.0
+    },
+    {
+        "Upgrade": "Tarax Tad_Boost.exe",
+        "Faction": "Traxus",
+        "Lvl": 3,
+        "Credits": 2500,
+        "Material 1": "Liquid Explosive",
+        "#Amount1": 8,
+        "Material 2": "Fungal Growth",
+        "#Amount2": 3.0
+    },
+    {
+        "Upgrade": "Shielded",
+        "Faction": "Traxus",
+        "Lvl": 1,
+        "Credits": 1250,
+        "Material 1": "Carbon Wire",
+        "#Amount1": 4,
+        "Material 2": "Basic Xerogel",
+        "#Amount2": 2.0
+    },
+    {
+        "Upgrade": "Shielded_Stocked",
+        "Faction": "Traxus",
+        "Lvl": 2,
+        "Credits": 1750,
+        "Material 1": "Polymire Wire",
+        "#Amount1": 8,
+        "Material 2": "Dynamic Lens",
+        "#Amount2": 4.0
+    },
+    {
+        "Upgrade": "Shielded_Discount",
+        "Faction": "Traxus",
+        "Lvl": 3,
+        "Credits": 2500,
+        "Material 1": "Liquid Explosive",
+        "#Amount1": 8,
+        "Material 2": "Tarax Seed",
+        "#Amount2": 6.0
+    },
+    {
+        "Upgrade": "Traxus Heat_Sink.exe",
+        "Faction": "Traxus",
+        "Lvl": 1,
+        "Credits": 1250,
+        "Material 1": "Putty Explosive",
+        "#Amount1": 12,
+        "Material 2": "Basic Xerogel",
+        "#Amount2": 6.0
+    },
+    {
+        "Upgrade": "Mips Sniper Rifle",
+        "Faction": "Traxus",
+        "Lvl": 3,
+        "Credits": 2500,
+        "Material 1": "Liquid Explosive",
+        "#Amount1": 8,
+        "Material 2": "Tarax Seed",
+        "#Amount2": 6.0
+    },
+    {
+        "Upgrade": "Lockbox_Locator.exe",
+        "Faction": "Traxus",
+        "Lvl": 3,
+        "Credits": 5000,
+        "Material 1": "Synchronizer",
+        "#Amount1": 9,
+        "Material 2": "Regen Resin",
+        "#Amount2": 12.0
+    },
+    {
+        "Upgrade": "Traxus Enhanced_Cooling.exe",
+        "Faction": "Traxus",
+        "Lvl": 2,
+        "Credits": 1750,
+        "Material 1": "Gel Explosive",
+        "#Amount1": 12,
+        "Material 2": "Dynamic Lens",
+        "#Amount2": 4.0
+    },
+    {
+        "Upgrade": "Traxus Heat_Sink.exe",
+        "Faction": "Traxus",
+        "Lvl": 3,
+        "Credits": 2500,
+        "Material 1": "Liquid Explosive",
+        "#Amount1": 8,
+        "Material 2": "Tarax Seed",
+        "#Amount2": 6.0
+    },
+    {
+        "Upgrade": "Armored",
+        "Faction": "Traxus",
+        "Lvl": 3,
+        "Credits": 5000,
+        "Material 1": "Synchronizer",
+        "#Amount1": 9,
+        "Material 2": "Regen Resin",
+        "#Amount2": 12.0
+    },
+    {
+        "Upgrade": "Traxus Expansion",
+        "Faction": "Traxus",
+        "Lvl": 3,
+        "Credits": 4000,
+        "Material 1": "Shell ID",
+        "#Amount1": 9,
+        "Material 2": "Biogenic Alloy",
+        "#Amount2": 1.0
+    },
+    {
+        "Upgrade": "Traxus Optimization",
+        "Faction": "Traxus",
+        "Lvl": 3,
+        "Credits": 3000,
+        "Material 1": "Smart Lens",
+        "#Amount1": 6,
+        "Material 2": "Biogenic Alloy",
+        "#Amount2": 2.0
     }
 ]
