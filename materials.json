@@ -1,0 +1,382 @@
+[
+    {
+        "Material": "Aluminum Rods",
+        "Map": "Perimeter",
+        "POI 1": "Station",
+        "POI 2": "Hauler",
+        "Source 1": "Arms Locker",
+        "Source 2": "",
+        "Source 3": "",
+        "Notes": ""
+    },
+    {
+        "Material": "Anomalous Plasma",
+        "Map": "-",
+        "POI 1": "-",
+        "POI 2": "-",
+        "Source 1": "Locked Rooms - Superior +",
+        "Source 2": "UESC Incursion",
+        "Source 3": "Intercept",
+        "Notes": ""
+    },
+    {
+        "Material": "Basic Xerogel",
+        "Map": "Dire Marsh",
+        "POI 1": "Quarantine",
+        "POI 2": "Greenhouse",
+        "Source 1": "Tool Cart",
+        "Source 2": "",
+        "Source 3": "",
+        "Notes": ""
+    },
+    {
+        "Material": "Biofilament",
+        "Map": "-",
+        "POI 1": "-",
+        "POI 2": "-",
+        "Source 1": "UESC Incursion",
+        "Source 2": "Locked Rooms - Superior +",
+        "Source 3": "",
+        "Notes": ""
+    },
+    {
+        "Material": "Biogenic Alloy",
+        "Map": "-",
+        "POI 1": "-",
+        "POI 2": "-",
+        "Source 1": "Locked Rooms - Superior +",
+        "Source 2": "UESC Incursion",
+        "Source 3": "Intercept",
+        "Notes": ""
+    },
+    {
+        "Material": "Carbon Wire",
+        "Map": "Perimeter",
+        "POI 1": "Hauler",
+        "POI 2": "South Relay",
+        "Source 1": "Munitions Crate",
+        "Source 2": "",
+        "Source 3": "",
+        "Notes": ""
+    },
+    {
+        "Material": "Chitin Sample",
+        "Map": "-",
+        "POI 1": "-",
+        "POI 2": "-",
+        "Source 1": "Tick Nests",
+        "Source 2": "",
+        "Source 3": "",
+        "Notes": ""
+    },
+    {
+        "Material": "Coherence Drive",
+        "Map": "-",
+        "POI 1": "-",
+        "POI 2": "-",
+        "Source 1": "UESC Incursion",
+        "Source 2": "Locked Rooms - Superior +",
+        "Source 3": "",
+        "Notes": ""
+    },
+    {
+        "Material": "Combat Xerogel",
+        "Map": "-",
+        "POI 1": "-",
+        "POI 2": "-",
+        "Source 1": "UESC Incursion",
+        "Source 2": "Locked Rooms - Superior +",
+        "Source 3": "",
+        "Notes": ""
+    },
+    {
+        "Material": "Conductive Filament",
+        "Map": "Perimeter",
+        "POI 1": "North Relay",
+        "POI 2": "Overflow",
+        "Source 1": "Bioprinter",
+        "Source 2": "Locked Rooms - Deluxe +",
+        "Source 3": "",
+        "Notes": ""
+    },
+    {
+        "Material": "Dynamic Lens",
+        "Map": "Dire Marsh",
+        "POI 1": "Quarantine",
+        "POI 2": "Bio-Research",
+        "Source 1": "Bioprinter",
+        "Source 2": "Locked Rooms - Deluxe +",
+        "Source 3": "",
+        "Notes": ""
+    },
+    {
+        "Material": "Encrypted Drive",
+        "Map": "Dire Marsh",
+        "POI 1": "Algae Ponds",
+        "POI 2": "AI Uplink",
+        "Source 1": "Core Storage",
+        "Source 2": "Locked Rooms - Deluxe +",
+        "Source 3": "",
+        "Notes": ""
+    },
+    {
+        "Material": "Expanded Processor",
+        "Map": "Perimeter",
+        "POI 1": "North Relay",
+        "POI 2": "South Relay",
+        "Source 1": "Core Storage",
+        "Source 2": "Locked Rooms - Deluxe +",
+        "Source 3": "",
+        "Notes": ""
+    },
+    {
+        "Material": "Flex Processor",
+        "Map": "-",
+        "POI 1": "-",
+        "POI 2": "-",
+        "Source 1": "UESC Incursion",
+        "Source 2": "Locked Rooms - Superior +",
+        "Source 3": "",
+        "Notes": ""
+    },
+    {
+        "Material": "Fungal Growth",
+        "Map": "-",
+        "POI 1": "-",
+        "POI 2": "-",
+        "Source 1": "Watery Areas",
+        "Source 2": "",
+        "Source 3": "",
+        "Notes": ""
+    },
+    {
+        "Material": "Gel Explosive",
+        "Map": "Dire Marsh",
+        "POI 1": "Complex",
+        "POI 2": "Field Maintenance",
+        "Source 1": "Munitions Crate",
+        "Source 2": "Locked Rooms - Deluxe +",
+        "Source 3": "",
+        "Notes": ""
+    },
+    {
+        "Material": "Hydrocarbon Rubber",
+        "Map": "Perimeter",
+        "POI 1": "Station",
+        "POI 2": "Overflow",
+        "Source 1": "Arms Locker",
+        "Source 2": "",
+        "Source 3": "",
+        "Notes": ""
+    },
+    {
+        "Material": "Lab Xerogel",
+        "Map": "Dire Marsh",
+        "POI 1": "Quarantine",
+        "POI 2": "Greenhouse",
+        "Source 1": "Tool Cart",
+        "Source 2": "Locked Rooms - Deluxe +",
+        "Source 3": "",
+        "Notes": ""
+    },
+    {
+        "Material": "Liquid Explosive",
+        "Map": "-",
+        "POI 1": "-",
+        "POI 2": "-",
+        "Source 1": "UESC Incursion",
+        "Source 2": "Locked Rooms - Superior +",
+        "Source 3": "",
+        "Notes": ""
+    },
+    {
+        "Material": "Micro Processor",
+        "Map": "Perimeter",
+        "POI 1": "North Relay",
+        "POI 2": "South Relay",
+        "Source 1": "Core Storage",
+        "Source 2": "",
+        "Source 3": "",
+        "Notes": ""
+    },
+    {
+        "Material": "Molecular Wire",
+        "Map": "-",
+        "POI 1": "-",
+        "POI 2": "-",
+        "Source 1": "UESC Incursion",
+        "Source 2": "Locked Rooms - Superior +",
+        "Source 3": "",
+        "Notes": ""
+    },
+    {
+        "Material": "Nanocomposites",
+        "Map": "Dire Marsh",
+        "POI 1": "Bio-Research",
+        "POI 2": "Field Maintenance",
+        "Source 1": "Medical Cabinet",
+        "Source 2": "",
+        "Source 3": "",
+        "Notes": ""
+    },
+    {
+        "Material": "Nanotruss",
+        "Map": "-",
+        "POI 1": "-",
+        "POI 2": "-",
+        "Source 1": "UESC Incursion",
+        "Source 2": "Locked Rooms - Superior +",
+        "Source 3": "",
+        "Notes": ""
+    },
+    {
+        "Material": "Organic Lens",
+        "Map": "Dire Marsh",
+        "POI 1": "Quarantine",
+        "POI 2": "Bio-Research",
+        "Source 1": "Bioprinter",
+        "Source 2": "",
+        "Source 3": "",
+        "Notes": ""
+    },
+    {
+        "Material": "Papaver Bloom",
+        "Map": "-",
+        "POI 1": "-",
+        "POI 2": "-",
+        "Source 1": "Grassy Areas",
+        "Source 2": "Locked Rooms - Superior +",
+        "Source 3": "UESC Incursion",
+        "Notes": ""
+    },
+    {
+        "Material": "Plastic Filament",
+        "Map": "Perimeter",
+        "POI 1": "North Relay",
+        "POI 2": "Overflow",
+        "Source 1": "Bioprinter",
+        "Source 2": "",
+        "Source 3": "",
+        "Notes": ""
+    },
+    {
+        "Material": "Polymer Wire",
+        "Map": "Perimeter",
+        "POI 1": "Hauler",
+        "POI 2": "South Relay",
+        "Source 1": "Munitions Crate",
+        "Source 2": "Locked Rooms - Deluxe +",
+        "Source 3": "",
+        "Notes": ""
+    },
+    {
+        "Material": "Putty Explosive",
+        "Map": "Dire Marsh",
+        "POI 1": "Complex",
+        "POI 2": "Field Maintenance",
+        "Source 1": "Munitions Crate",
+        "Source 2": "",
+        "Source 3": "",
+        "Notes": ""
+    },
+    {
+        "Material": "Regen Resin",
+        "Map": "-",
+        "POI 1": "-",
+        "POI 2": "-",
+        "Source 1": "UESC Incursion",
+        "Source 2": "Locked Rooms - Superior +",
+        "Source 3": "",
+        "Notes": ""
+    },
+    {
+        "Material": "Shell ID",
+        "Map": "-",
+        "POI 1": "-",
+        "POI 2": "-",
+        "Source 1": "High Value Target",
+        "Source 2": "Supply Drop",
+        "Source 3": "",
+        "Notes": ""
+    },
+    {
+        "Material": "Smart Lens",
+        "Map": "-",
+        "POI 1": "-",
+        "POI 2": "-",
+        "Source 1": "UESC Incursion",
+        "Source 2": "Locked Rooms - Superior +",
+        "Source 3": "",
+        "Notes": ""
+    },
+    {
+        "Material": "Spark Leaf",
+        "Map": "Dire Marsh",
+        "POI 1": "AI Uplink",
+        "POI 2": "Greenhouse",
+        "Source 1": "Grassy Areas",
+        "Source 2": "",
+        "Source 3": "",
+        "Notes": ""
+    },
+    {
+        "Material": "Steel Rods",
+        "Map": "Perimeter",
+        "POI 1": "Station",
+        "POI 2": "Hauler",
+        "Source 1": "Arms Locker",
+        "Source 2": "Locked Rooms - Deluxe +",
+        "Source 3": "",
+        "Notes": ""
+    },
+    {
+        "Material": "Storage Drive",
+        "Map": "Dire Marsh",
+        "POI 1": "Algae Ponds",
+        "POI 2": "AI Uplink",
+        "Source 1": "Core Storage",
+        "Source 2": "",
+        "Source 3": "",
+        "Notes": ""
+    },
+    {
+        "Material": "Symbiote Rubber",
+        "Map": "-",
+        "POI 1": "-",
+        "POI 2": "-",
+        "Source 1": "UESC Incursion",
+        "Source 2": "Locked Rooms - Superior +",
+        "Source 3": "",
+        "Notes": ""
+    },
+    {
+        "Material": "Synchronizer",
+        "Map": "-",
+        "POI 1": "-",
+        "POI 2": "-",
+        "Source 1": "UESC",
+        "Source 2": "",
+        "Source 3": "",
+        "Notes": ""
+    },
+    {
+        "Material": "Synthetic Rubber",
+        "Map": "Perimeter",
+        "POI 1": "Station",
+        "POI 2": "Overflow",
+        "Source 1": "Arms Locker",
+        "Source 2": "Locked Rooms - Deluxe +",
+        "Source 3": "",
+        "Notes": ""
+    },
+    {
+        "Material": "Tarax Seed",
+        "Map": "Dire Marsh",
+        "POI 1": "AI Uplink",
+        "POI 2": "Greenhouse",
+        "Source 1": "Grassy Areas",
+        "Source 2": "Locked Rooms - Superior +",
+        "Source 3": "",
+        "Notes": ""
+    }
+]
