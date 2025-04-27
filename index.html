@@ -10,6 +10,8 @@
         .material, .upgrade { margin: 10px 0; padding: 10px; background: #222; border-radius: 5px; }
         .material label, .upgrade label { cursor: pointer; display: block; }
         #trackingList { margin-top: 30px; }
+        #trackingList li { margin-bottom: 10px; }
+        .details { margin-left: 20px; font-size: 0.9em; color: #ccc; }
         button { margin-top: 10px; padding: 5px 10px; font-size: 14px; }
     </style>
 </head>
@@ -160,7 +162,7 @@ function renderTracking() {
         if (m.isUpgrade) {
             li.innerHTML = `<strong>${m.name}</strong>`;
         } else {
-            li.innerHTML = `<strong>${m.name}</strong><br>Map: ${m.map}<br>Sources: ${m.sources.join(", ")}`;
+            li.innerHTML = `<strong>${m.name}</strong><div class="details">Map: ${m.map}<br>Sources: ${m.sources.join(", ")}</div>`;
         }
         trackingList.appendChild(li);
     });
