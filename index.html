@@ -12,6 +12,7 @@
         #trackingList { margin-top: 30px; }
         #trackingList li { margin-bottom: 10px; }
         .details { margin-left: 20px; font-size: 0.9em; color: #ccc; }
+        .group { margin-left: 20px; list-style-type: circle; }
         button { margin-top: 10px; padding: 5px 10px; font-size: 14px; }
     </style>
 </head>
@@ -157,14 +158,24 @@ function addUpgradeToTracking(upgradeName) {
 
 function renderTracking() {
     trackingList.innerHTML = '';
+    let currentUpgrade = null;
     trackingItems.forEach(m => {
-        const li = document.createElement('li');
         if (m.isUpgrade) {
-            li.innerHTML = `<strong>${m.name}</strong>`;
+            currentUpgrade = document.createElement('li');
+            currentUpgrade.innerHTML = `<strong>${m.name}</strong>`;
+            const group = document.createElement('ul');
+            group.className = 'group';
+            currentUpgrade.appendChild(group);
+            trackingList.appendChild(currentUpgrade);
         } else {
+            const li = document.createElement('li');
             li.innerHTML = `<strong>${m.name}</strong><div class="details">Map: ${m.map}<br>Sources: ${m.sources.join(", ")}</div>`;
+            if (currentUpgrade && currentUpgrade.querySelector('ul')) {
+                currentUpgrade.querySelector('ul').appendChild(li);
+            } else {
+                trackingList.appendChild(li);
+            }
         }
-        trackingList.appendChild(li);
     });
 }
 
