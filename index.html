@@ -14,6 +14,7 @@
     </style>
 </head>
 <body>
+
 <h1>Marathon Material Tracker</h1>
 <select id="modeSelect">
     <option value="materials">Material Search</option>
@@ -21,9 +22,11 @@
 </select>
 <input type="text" id="searchInput" placeholder="Search...">
 <div id="materialsList"></div>
+
 <h2>📋 Currently Tracking:</h2>
 <ul id="trackingList"></ul>
 <button onclick="clearTracking()">Clear All</button>
+
 <script>
 let materials = [];
 let upgrades = [];
@@ -99,10 +102,17 @@ function renderUpgrades() {
 }
 
 function toggleTracking(material) {
-    if (trackingItems.includes(material)) {
-        trackingItems = trackingItems.filter(m => m !== material);
+    if (trackingItems.find(t => t.name === material)) {
+        trackingItems = trackingItems.filter(t => t.name !== material);
     } else {
-        trackingItems.push(material);
+        const matData = materials.find(m => m.Material === material);
+        if (matData) {
+            trackingItems.push({
+                name: material,
+                map: matData.Map,
+                sources: [matData["Source 1"], matData["Source 2"], matData["Source 3"]].filter(s => s)
+            });
+        }
     }
     localStorage.setItem('trackingItems', JSON.stringify(trackingItems));
     renderTracking();
@@ -112,10 +122,12 @@ function toggleTracking(material) {
 function addUpgradeToTracking(upgradeName) {
     const upgrade = upgrades.find(u => u.Upgrade === upgradeName);
     if (upgrade) {
-        trackingItems.push(`Upgrade: ${upgrade.Upgrade}`);
-        if (upgrade["Material 1"]) trackingItems.push(upgrade["Material 1"]);
-        if (upgrade["Material 2"]) trackingItems.push(upgrade["Material 2"]);
-        trackingItems = [...new Set(trackingItems)];
+        trackingItems.push({ name: `Upgrade: ${upgrade.Upgrade}`, isUpgrade: true });
+        if (upgrade["Material 1"]) toggleTracking(upgrade["Material 1"]);
+        if (upgrade["Material 2"]) toggleTracking(upgrade["Material 2"]);
+        trackingItems = trackingItems.filter((item, index, self) =>
+            index === self.findIndex(t => t.name === item.name)
+        );
         localStorage.setItem('trackingItems', JSON.stringify(trackingItems));
         renderTracking();
     }
@@ -125,7 +137,11 @@ function renderTracking() {
     trackingList.innerHTML = '';
     trackingItems.forEach(m => {
         const li = document.createElement('li');
-        li.textContent = m;
+        if (m.isUpgrade) {
+            li.innerHTML = `<strong>${m.name}</strong>`;
+        } else {
+            li.innerHTML = `${m.name}<br>Map: ${m.map}<br>Sources: ${m.sources.join(", ")}`;
+        }
         trackingList.appendChild(li);
     });
 }
@@ -137,5 +153,6 @@ function clearTracking() {
     renderView();
 }
 </script>
+
 </body>
 </html>
