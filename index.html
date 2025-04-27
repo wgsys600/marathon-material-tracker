@@ -14,6 +14,10 @@
         .details { margin-left: 20px; font-size: 0.9em; color: #ccc; }
         .group { margin-left: 20px; list-style-type: circle; }
         button { margin-top: 10px; padding: 5px 10px; font-size: 14px; }
+        .common { color: #66ff99; }
+        .uncommon { color: #66ccff; }
+        .rare { color: #cc66ff; }
+        .legendary { color: #ffeb66; }
     </style>
 </head>
 <body>
@@ -55,6 +59,13 @@ fetch('materials.json')
 modeSelect.addEventListener('change', renderView);
 searchInput.addEventListener('input', renderView);
 
+function getRarityClass(name) {
+    if (name.toLowerCase().includes("anomalous") || name.toLowerCase().includes("plasma")) return "legendary";
+    if (name.toLowerCase().includes("biofilament") || name.toLowerCase().includes("synth")) return "rare";
+    if (name.toLowerCase().includes("chitin") || name.toLowerCase().includes("xerogel")) return "uncommon";
+    return "common";
+}
+
 function renderView() {
     if (modeSelect.value === 'materials') {
         renderMaterials();
@@ -73,10 +84,11 @@ function renderMaterials() {
             div.className = 'material';
             const isTracked = trackingItems.some(t => t.name === m.Material);
             const checked = isTracked ? 'checked' : '';
+            const rarityClass = getRarityClass(m.Material);
             div.innerHTML = `
                 <label>
                     <input type="checkbox" onchange="toggleTracking('${m.Material}')" ${checked}>
-                    <strong>${m.Material}</strong> <br>
+                    <strong class="${rarityClass}">${m.Material}</strong> <br>
                     Map: ${m.Map} | POI 1: ${m["POI 1"]} | POI 2: ${m["POI 2"]}<br>
                     Sources: ${[m["Source 1"], m["Source 2"], m["Source 3"]].filter(s => s).join(", ")}
                 </label>
@@ -168,8 +180,9 @@ function renderTracking() {
             currentUpgrade.appendChild(group);
             trackingList.appendChild(currentUpgrade);
         } else {
+            const rarityClass = getRarityClass(m.name);
             const li = document.createElement('li');
-            li.innerHTML = `<strong>${m.name}</strong><div class="details">Map: ${m.map}<br>Sources: ${m.sources.join(", ")}</div>`;
+            li.innerHTML = `<strong class="${rarityClass}">${m.name}</strong><div class="details">Map: ${m.map}<br>Sources: ${m.sources.join(", ")}</div>`;
             if (currentUpgrade && currentUpgrade.querySelector('ul')) {
                 currentUpgrade.querySelector('ul').appendChild(li);
             } else {
