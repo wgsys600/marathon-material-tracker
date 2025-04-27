@@ -7,8 +7,8 @@
     <style>
         body { font-family: Arial, sans-serif; margin: 20px; background: #111; color: #eee; }
         input[type="text"] { width: 100%; padding: 10px; font-size: 16px; margin-bottom: 20px; }
-        .material { margin: 10px 0; padding: 10px; border-radius: 5px; }
-        .material label { cursor: pointer; display: block; }
+        .material { margin: 10px 0; padding: 10px; background: #222; border-radius: 5px; }
+        .material label { cursor: pointer; }
         #trackingList { margin-top: 30px; }
         button { margin-top: 10px; padding: 5px 10px; font-size: 14px; }
     </style>
@@ -30,15 +30,7 @@ const materialsList = document.getElementById('materialsList');
 const trackingList = document.getElementById('trackingList');
 let trackingItems = [];
 
-const rarityColors = {
-    common: '#222',
-    uncommon: '#228B22',
-    rare: '#1E90FF',
-    epic: '#800080',
-    legendary: '#FFD700'
-};
-
-fetch('materials_with_rarity.json')
+fetch('materials.json')
     .then(response => response.json())
     .then(data => {
         materials = data;
@@ -53,8 +45,6 @@ function renderMaterials() {
         .forEach((m) => {
             const div = document.createElement('div');
             div.className = 'material';
-            div.style.backgroundColor = rarityColors[m.Rarity] || '#222';
-            div.style.color = (m.Rarity === 'legendary') ? '#000' : '#fff';
             div.innerHTML = `
                 <label>
                     <input type="checkbox" onchange="toggleTracking('${m.Material}')">
