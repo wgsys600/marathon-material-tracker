@@ -170,6 +170,21 @@ function toggleTracking(material) {
             trackingItems.push({
                 name: material,
                 map: matData.Map,
+                poi1: matData["POI 1"],
+                poi2: matData["POI 2"],
+                sources: [matData["Source 1"], matData["Source 2"], matData["Source 3"]].filter(s => s)
+            });
+        }
+    }
+    localStorage.setItem('trackingItems', JSON.stringify(trackingItems));
+    renderTracking();
+    renderMaterials();
+} else {
+        const matData = materials.find(m => m.Material === material);
+        if (matData) {
+            trackingItems.push({
+                name: material,
+                map: matData.Map,
                 sources: [matData["Source 1"], matData["Source 2"], matData["Source 3"]].filter(s => s)
             });
         }
@@ -218,6 +233,22 @@ function renderTracking() {
         if (m.isUpgrade) {
             currentUpgrade = document.createElement('li');
             currentUpgrade.innerHTML = `<strong>${m.name}</strong>`;
+            const group = document.createElement('ul');
+            group.className = 'group';
+            currentUpgrade.appendChild(group);
+            trackingList.appendChild(currentUpgrade);
+        } else {
+            const rarityClass = getRarityClass(m.name);
+            const li = document.createElement('li');
+            li.innerHTML = `<strong class="${rarityClass}">${m.name}</strong><div class="details">Map: ${m.map}<br>POI 1: ${m.poi1}<br>POI 2: ${m.poi2}<br>Sources: ${m.sources.join(", ")}</div>`;
+            if (currentUpgrade && currentUpgrade.querySelector('ul')) {
+                currentUpgrade.querySelector('ul').appendChild(li);
+            } else {
+                trackingList.appendChild(li);
+            }
+        }
+    });
+}</strong>`;
             const group = document.createElement('ul');
             group.className = 'group';
             currentUpgrade.appendChild(group);
