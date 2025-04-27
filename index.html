@@ -160,7 +160,7 @@ function renderTracking() {
         if (m.isUpgrade) {
             li.innerHTML = `<strong>${m.name}</strong>`;
         } else {
-            li.innerHTML = `${m.name}<br>Map: ${m.map}<br>Sources: ${m.sources.join(", ")}`;
+            li.innerHTML = `<strong>${m.name}</strong><br>Map: ${m.map}<br>Sources: ${m.sources.join(", ")}`;
         }
         trackingList.appendChild(li);
     });
