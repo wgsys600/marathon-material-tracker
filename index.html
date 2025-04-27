@@ -36,7 +36,7 @@ input[type="text"] { width: 300px; padding: 10px; font-size: 16px; margin-bottom
 </main>
 
 <aside>
-    <h2>Currently Tracking:</h2>
+    <h2>📋 Currently Tracking:</h2>
     <ul id="trackingList"></ul>
     <button onclick="clearTracking()">Clear All</button>
 </aside>
@@ -235,7 +235,7 @@ function renderTracking() {
         } else {
             const rarityClass = getRarityClass(m.name);
             const li = document.createElement('li');
-            li.innerHTML = `<strong class="${rarityClass}">${m.name}</strong><div class="details">Map: ${m.map}<br>POI 1: ${m.poi1}<br>POI 2: ${m.poi2}<br>Sources: ${m.sources.join(", ")}</div>`;
+            li.innerHTML = `<label><input type=\"checkbox\" onchange=\"toggleCollected('${m.name}')\"> <strong class=\"${rarityClass}\">${m.name}</strong></label><div class=\"details\">Map: ${m.map}<br>POI 1: ${m.poi1}<br>POI 2: ${m.poi2}<br>Sources: ${m.sources.join(", ")}</div>`;
             if (currentUpgrade && currentUpgrade.querySelector('ul')) {
                 currentUpgrade.querySelector('ul').appendChild(li);
             } else {
@@ -243,6 +243,20 @@ function renderTracking() {
             }
         }
     });
+}
+
+function removeTrackedMaterial(name) {
+    trackingItems = trackingItems.filter(t => t.name !== name);
+    localStorage.setItem('trackingItems', JSON.stringify(trackingItems));
+    renderTracking();
+    renderView();
+}
+
+function toggleCollected(name) {
+    trackingItems = trackingItems.filter(t => t.name !== name);
+    localStorage.setItem('trackingItems', JSON.stringify(trackingItems));
+    renderTracking();
+    renderView();
 }
 
 function clearTracking() {
