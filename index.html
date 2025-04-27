@@ -14,7 +14,6 @@
     </style>
 </head>
 <body>
-
 <h1>Marathon Material Tracker</h1>
 <select id="modeSelect">
     <option value="materials">Material Search</option>
@@ -22,11 +21,9 @@
 </select>
 <input type="text" id="searchInput" placeholder="Search...">
 <div id="materialsList"></div>
-
 <h2>📋 Currently Tracking:</h2>
 <ul id="trackingList"></ul>
 <button onclick="clearTracking()">Clear All</button>
-
 <script>
 let materials = [];
 let upgrades = [];
@@ -118,7 +115,7 @@ function addUpgradeToTracking(upgradeName) {
         trackingItems.push(`Upgrade: ${upgrade.Upgrade}`);
         if (upgrade["Material 1"]) trackingItems.push(upgrade["Material 1"]);
         if (upgrade["Material 2"]) trackingItems.push(upgrade["Material 2"]);
-        trackingItems = [...new Set(trackingItems)]; // Remove duplicates
+        trackingItems = [...new Set(trackingItems)];
         localStorage.setItem('trackingItems', JSON.stringify(trackingItems));
         renderTracking();
     }
@@ -140,6 +137,5 @@ function clearTracking() {
     renderView();
 }
 </script>
-
 </body>
 </html>

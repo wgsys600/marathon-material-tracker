@@ -1,0 +1,16 @@
+[
+    {
+        "Upgrade": "CyberAcme Expansion",
+        "Material 1": "Micro Processor",
+        "#Amount1": 20,
+        "Material 2": "",
+        "#Amount2": ""
+    },
+    {
+        "Upgrade": "Cores",
+        "Material 1": "Micro Processor",
+        "#Amount1": 8,
+        "Material 2": "Spark Leaf",
+        "#Amount2": 4
+    }
+]
