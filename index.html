@@ -24,31 +24,33 @@
 <button onclick="clearTracking()">Clear All</button>
 
 <script>
-const materials = [
-    { Material: "Aluminum Rods", Map: "Perimeter", POI1: "Station", POI2: "Hauler", Source1: "Arms Locker", Source2: "", Source3: "", Status: "", Notes: "" },
-    { Material: "Basic Xerogel", Map: "Dire Marsh", POI1: "Quarantine", POI2: "Greenhouse", Source1: "Tool Cart", Source2: "", Source3: "", Status: "", Notes: "" },
-    // ... you can extend this list with full data extracted from your spreadsheet
-];
-
+let materials = [];
 const searchInput = document.getElementById('searchInput');
 const materialsList = document.getElementById('materialsList');
 const trackingList = document.getElementById('trackingList');
 let trackingItems = [];
+
+fetch('materials.json')
+    .then(response => response.json())
+    .then(data => {
+        materials = data;
+        renderMaterials();
+    });
 
 function renderMaterials() {
     const query = searchInput.value.toLowerCase();
     materialsList.innerHTML = '';
     materials
         .filter(m => m.Material.toLowerCase().includes(query))
-        .forEach((m, index) => {
+        .forEach((m) => {
             const div = document.createElement('div');
             div.className = 'material';
             div.innerHTML = `
                 <label>
                     <input type="checkbox" onchange="toggleTracking('${m.Material}')">
                     <strong>${m.Material}</strong> <br>
-                    Map: ${m.Map} | POI 1: ${m.POI1} | POI 2: ${m.POI2}<br>
-                    Sources: ${[m.Source1, m.Source2, m.Source3].filter(s => s).join(", ")}<br>
+                    Map: ${m.Map} | POI 1: ${m["POI 1"]} | POI 2: ${m["POI 2"]}<br>
+                    Sources: ${[m["Source 1"], m["Source 2"], m["Source 3"]].filter(s => s).join(", ")}<br>
                     Notes: ${m.Notes || 'None'}
                 </label>
             `;
@@ -81,9 +83,8 @@ function clearTracking() {
 }
 
 searchInput.addEventListener('input', renderMaterials);
-
-renderMaterials();
 </script>
+
 
 </body>
 </html>
